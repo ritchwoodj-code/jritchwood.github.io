@@ -5,26 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joseph Ritchwood Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #222; color: white; padding: 1rem; text-align: center; }
-    section { padding: 2rem; max-width: 800px; margin: auto; }
-    h1, h2 { color: #111; }
-    .project { background: white; padding: 1rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .button { display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: #0066cc; color: white; border-radius: 4px; }
+    :root {
+      --bg: #f5f7fa;
+      --primary: #0d6efd;
+      --secondary: #495057;
+      --text: #212529;
+      --card-bg: #ffffff;
+      --accent: #0dcaf0;
+    }
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    header a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s ease-in-out;
+    }
+    header a.button:hover {
+      background: #0bbcd4;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+    .project {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.15s ease-in-out;
+    }
+    .project:hover {
+      transform: translateY(-4px);
+    }
+    .project h3 {
+      margin-top: 0;
+      color: var(--secondary);
+    }
+    .contact-info p {
+      margin: 0.3rem 0;
+    }
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e9ecef;
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Joseph Ritchwood</h1>
     <p>MBA Candidate | Business Analytics | Growth Ops</p>
-    <p><a href="./resume.pdf" class="button">Download Resume</a></p>
+    <a href="./resume.pdf" class="button">Download Resume</a>
   </header>
 
   <section>
     <h2>About</h2>
-    <p>I turn data and strategy into clean execution. Finishing Business Analytics and IT certification at DeVry University, Nov 2025.</p>
+    <p>
+      I turn data and strategy into clean execution. Finishing Business Analytics and IT certification at DeVry University, Nov 2025.
+    </p>
     <p><strong>Core skills:</strong> Strategy • Business Analytics • Financial Modeling • Marketing Ops • GTM • Copywriting</p>
   </section>
 
@@ -59,10 +142,19 @@
 
   <section>
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:joseph@example.com">joseph@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:joseph@example.com">joseph@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+    </div>
   </section>
+
+  <footer>
+    © <span id="year"></span> Joseph Ritchwood. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
